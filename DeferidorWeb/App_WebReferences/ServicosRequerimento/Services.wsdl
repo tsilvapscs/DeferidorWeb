@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProcessoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProcessoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDbeDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dbe" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDbeDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDbeDSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExisteProtocolo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExisteProtocoloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getExisteProtocoloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:getProcesso" />
+  </wsdl:message>
+  <wsdl:message name="getProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:getProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDbeDSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDbeDS" />
+  </wsdl:message>
+  <wsdl:message name="GetDbeDSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDbeDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExisteProtocoloSoapIn">
+    <wsdl:part name="parameters" element="tns:getExisteProtocolo" />
+  </wsdl:message>
+  <wsdl:message name="getExisteProtocoloSoapOut">
+    <wsdl:part name="parameters" element="tns:getExisteProtocoloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicesSoap">
+    <wsdl:operation name="getProcesso">
+      <wsdl:input message="tns:getProcessoSoapIn" />
+      <wsdl:output message="tns:getProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDbeDS">
+      <wsdl:input message="tns:GetDbeDSSoapIn" />
+      <wsdl:output message="tns:GetDbeDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExisteProtocolo">
+      <wsdl:input message="tns:getExisteProtocoloSoapIn" />
+      <wsdl:output message="tns:getExisteProtocoloSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicesSoap" type="tns:ServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getProcesso">
+      <soap:operation soapAction="http://tempuri.org/getProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDbeDS">
+      <soap:operation soapAction="http://tempuri.org/GetDbeDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExisteProtocolo">
+      <soap:operation soapAction="http://tempuri.org/getExisteProtocolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicesSoap12" type="tns:ServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getProcesso">
+      <soap12:operation soapAction="http://tempuri.org/getProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDbeDS">
+      <soap12:operation soapAction="http://tempuri.org/GetDbeDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExisteProtocolo">
+      <soap12:operation soapAction="http://tempuri.org/getExisteProtocolo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Services">
+    <wsdl:port name="ServicesSoap" binding="tns:ServicesSoap">
+      <soap:address location="http://regin.jucepa.pa.gov.br/Requerimentov2/Services.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicesSoap12" binding="tns:ServicesSoap12">
+      <soap12:address location="http://regin.jucepa.pa.gov.br/Requerimentov2/Services.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

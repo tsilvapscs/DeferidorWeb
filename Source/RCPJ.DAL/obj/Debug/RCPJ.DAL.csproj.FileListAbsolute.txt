@@ -1,0 +1,7 @@
+C:\Users\vtham\PSCS\TaxAssembliesProjetos\TaxAssembliesRequerimento_v13\RCPJ.DAL.dll
+C:\Users\vtham\PSCS\TaxAssembliesProjetos\TaxAssembliesRequerimento_v13\RCPJ.DAL.pdb
+C:\Users\vtham\PSCS\SourcesProgramasGit\Deferidor\Source\RCPJ.DAL\obj\Debug\RCPJ.DAL.csproj.AssemblyReference.cache
+C:\Users\vtham\PSCS\SourcesProgramasGit\Deferidor\Source\RCPJ.DAL\obj\Debug\RCPJ.DAL.csproj.CoreCompileInputs.cache
+C:\Users\vtham\PSCS\SourcesProgramasGit\Deferidor\Source\RCPJ.DAL\obj\Debug\RCPJ.DAL.csproj.CopyComplete
+C:\Users\vtham\PSCS\SourcesProgramasGit\Deferidor\Source\RCPJ.DAL\obj\Debug\RCPJ.DAL.dll
+C:\Users\vtham\PSCS\SourcesProgramasGit\Deferidor\Source\RCPJ.DAL\obj\Debug\RCPJ.DAL.pdb

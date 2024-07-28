@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<coleta>
+  <dadosGerais>
+    <cnpjOrgaoRegistro>03110616000103</cnpjOrgaoRegistro>
+    <dataProtocolo>20150323 150013</dataProtocolo>
+    <uf>MT</uf>
+    <ProtocoloOR>159576075</ProtocoloOR>
+    <ProtocoloViabilidade>MTP1500123567</ProtocoloViabilidade>
+    <NrDbe>mt2010202100021353050904</NrDbe>
+    <CnpjEmpresa></CnpjEmpresa>
+    <qtdEmpresas>1</qtdEmpresas>
+    <qtdFiliaisNoEstado>0</qtdFiliaisNoEstado>
+    <qtdFiliaisForaDoEstado>0</qtdFiliaisForaDoEstado>
+  </dadosGerais>
+  <GrupoEvento>
+    <evento>101</evento>
+  </GrupoEvento>
+  <IdentificacaoEmpresa>
+    <NireMatricula></NireMatricula>
+    <nomeEmpresarial><![CDATA[AGROPECUARIA PORANGA LTDA]]></nomeEmpresarial>
+    <nomeFantasia><![CDATA[AGROPECUARIA PORANGA]]></nomeFantasia>
+    <naturezaJuridica>206-2</naturezaJuridica>
+    <dataInicioAtividade/>
+    <dataAssinatura>20150303</dataAssinatura>
+    <capitalSocial>30000000</capitalSocial>
+    <indicaIntegralizaCapital>2</indicaIntegralizaCapital>
+    <capitalIntegralizado>30000000</capitalIntegralizado>
+    <porte>NO</porte>
+    <ddd>66</ddd>
+    <telefone1>35441590</telefone1>
+    <telefone2></telefone2>
+    <email><![CDATA[icc@iccontabilidade.com.br]]></email>
+  </IdentificacaoEmpresa>
+  <EnderecoEmpresa>
+    <tipoLogradouro><![CDATA[RODOVIA]]></tipoLogradouro>
+    <logradouro><![CDATA[BR 163 KM 755]]></logradouro>
+    <numero><![CDATA[S/N]]></numero>
+    <complemento><![CDATA[]]></complemento>
+    <bairro><![CDATA[ZONA RURAL]]></bairro>
+    <cep>78890000</cep>
+    <CodMunicipio>99074</CodMunicipio>
+    <uf>MT</uf>
+    <codPais>105</codPais>
+  </EnderecoEmpresa>
+  <AtuacaoEmpresa>
+    <objetoSocial><![CDATA[CULTIVO DE SOJA, CULTIVO DE ARROZ,  CULTIVO DE MILHO, CULTIVO DE FEIJÃO, CRIAÇÃO DE BOVINOS PARA CORTE]]></objetoSocial>
+    <cnaePrincipal>0115600</cnaePrincipal>
+    <cnaeSecundaria>
+      <valor>0111301</valor>
+      <valor>0111302</valor>
+    </cnaeSecundaria>
+  </AtuacaoEmpresa>
+  <GrupoQSA>
+    <socioFundadorDiretor>
+      <evento>1</evento>
+      <dataEvento>20150316</dataEvento>
+      <nome><![CDATA[ELIRIO DAROIT]]></nome>
+      <cpfCnpj>06111076949</cpfCnpj>
+      <nire></nire>
+      <qualificacao>22</qualificacao>
+      <vlParticipacao>10000000</vlParticipacao>
+      <tipoLogradouro>RUA</tipoLogradouro>
+      <logradouro><![CDATA[DAS VIDEIRAS]]></logradouro>
+      <numero>171</numero>
+      <complemento><![CDATA[]]></complemento>
+      <bairro><![CDATA[JARDIM ALVORADA]]></bairro>
+      <cep>78890000</cep>
+      <CodMunicipio>99074</CodMunicipio>
+      <UF>MT</UF>
+      <codPais>105</codPais>
+      <ddd>66</ddd>
+      <telefone1>35441590</telefone1>
+      <telefone2></telefone2>
+      <email>icc@icccontabilidade.com.br</email>
+      <flagAdministrador>1</flagAdministrador>
+      <gerenteUsoFirma>3</gerenteUsoFirma>
+      <Firmantes></Firmantes>
+      <dadosPessoaFisica>
+        <nomeMae><![CDATA[NAIR  DAROIT]]></nomeMae>
+        <nomePai><![CDATA[EVALDO DAROIT]]></nomePai>
+        <dtNascimento>19501110</dtNascimento>
+        <nrDocumento>2683661-0</nrDocumento>
+        <descricaoOrgaoEmissor><![CDATA[SEJSP]]></descricaoOrgaoEmissor>
+        <ufOrgaoEmissor>MT</ufOrgaoEmissor>
+        <dtEmissaoDocumento></dtEmissaoDocumento>
+        <dtVencimentoDocumento></dtVencimentoDocumento>
+        <codigoPais>105</codigoPais>
+        <sexo>M</sexo>
+        <UfNaturalidade></UfNaturalidade>
+        <estadoCivil><![CDATA[DIVORCIADO]]></estadoCivil>
+        <regimeBens><![CDATA[0]]></regimeBens>
+        <emancipacao><![CDATA[0]]></emancipacao>
+        <descricaoProfissao><![CDATA[EMPRESÁRIO]]></descricaoProfissao>
+      </dadosPessoaFisica>
+      <GrupoRepresentante/>
+    </socioFundadorDiretor>
+  </GrupoQSA>
+  <GrupoFilial></GrupoFilial>
+  <Contador>
+    <cpfCnpjContab>00849577000172</cpfCnpjContab>
+    <nomeEmpresarialContab><![CDATA[CONTABIL HERVAL SS LTDA]]></nomeEmpresarialContab>
+    <sequencialCrcContab>002822</sequencialCrcContab>
+    <ufCrcContab>SC</ufCrcContab>
+    <classifCrcContab>2</classifCrcContab>
+    <tipoCrcContab>O</tipoCrcContab>
+    <cpfRespContab>55766781920</cpfRespContab>
+    <sequencialCrcRespContab>019477</sequencialCrcRespContab>
+    <ufCrcRespContab>SC</ufCrcRespContab>
+    <classifCrcRespContab>1</classifCrcRespContab>
+    <tipoCrcRespContab>O</tipoCrcRespContab>
+  </Contador>
+
+  <Contador>
+    <cpfCnpjContab>09225457000179</cpfCnpjContab>
+    <nomeEmpresarialContab>BALSANELLI CONTABILIDADE LTDA ME</nomeEmpresarialContab>
+    <sequencialCrcContab>007078</sequencialCrcContab>
+    <ufCrcContab>SC</ufCrcContab>
+    <classifCrcContab>1</classifCrcContab>
+    <tipoCrcContab>O</tipoCrcContab>
+    <classifCrcRespContab>1</classifCrcRespContab>
+    <cpfRespContab>00615770908</cpfRespContab>
+    <sequencialCrcRespContab>029424</sequencialCrcRespContab>
+    <ufCrcRespContab>SC</ufCrcRespContab>
+    <tipoCrcRespContab>O</tipoCrcRespContab>
+  </Contador>
+
+
+  <Contador>
+    <cpfCnpjContab>29120403968</cpfCnpjContab>
+    <nomeEmpresarialContab>GERALDO S. ROETGER</nomeEmpresarialContab>
+    <sequencialCrcContab>010364</sequencialCrcContab>
+    <ufCrcContab>SC</ufCrcContab>
+    <classifCrcContab>1</classifCrcContab>
+    <tipoCrcContab>O</tipoCrcContab>
+  </Contador>
+  <Contador>
+    <cpfCnpjContab>45798346900</cpfCnpjContab>
+    <nomeEmpresarialContab><![CDATA[ELISEANA WOLLINGER ADAM]]></nomeEmpresarialContab>
+    <sequencialCrcContab>012035</sequencialCrcContab>
+    <ufCrcContab>SC</ufCrcContab>
+    <classifCrcContab>1</classifCrcContab>
+    <tipoCrcContab>O</tipoCrcContab>
+  </Contador>
+</coleta>

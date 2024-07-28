@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.jucerja.rj.gov.br" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.jucerja.rj.gov.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.jucerja.rj.gov.br">
+      <s:element name="GetXmlViabilidade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="protocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXmlViabilidadeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXmlViabilidadeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetXmlViabilidadeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXmlViabilidade" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlViabilidadeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXmlViabilidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlViabilidadeHttpGetIn">
+    <wsdl:part name="protocolo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlViabilidadeHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlViabilidadeHttpPostIn">
+    <wsdl:part name="protocolo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlViabilidadeHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="WsControleViabSoap">
+    <wsdl:operation name="GetXmlViabilidade">
+      <wsdl:input message="tns:GetXmlViabilidadeSoapIn" />
+      <wsdl:output message="tns:GetXmlViabilidadeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WsControleViabHttpGet">
+    <wsdl:operation name="GetXmlViabilidade">
+      <wsdl:input message="tns:GetXmlViabilidadeHttpGetIn" />
+      <wsdl:output message="tns:GetXmlViabilidadeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WsControleViabHttpPost">
+    <wsdl:operation name="GetXmlViabilidade">
+      <wsdl:input message="tns:GetXmlViabilidadeHttpPostIn" />
+      <wsdl:output message="tns:GetXmlViabilidadeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsControleViabSoap" type="tns:WsControleViabSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXmlViabilidade">
+      <soap:operation soapAction="http://www.jucerja.rj.gov.br/GetXmlViabilidade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsControleViabSoap12" type="tns:WsControleViabSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXmlViabilidade">
+      <soap12:operation soapAction="http://www.jucerja.rj.gov.br/GetXmlViabilidade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsControleViabHttpGet" type="tns:WsControleViabHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetXmlViabilidade">
+      <http:operation location="/GetXmlViabilidade" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsControleViabHttpPost" type="tns:WsControleViabHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetXmlViabilidade">
+      <http:operation location="/GetXmlViabilidade" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsControleViab">
+    <wsdl:port name="WsControleViabSoap" binding="tns:WsControleViabSoap">
+      <soap:address location="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsControleViabSoap12" binding="tns:WsControleViabSoap12">
+      <soap12:address location="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsControleViabHttpGet" binding="tns:WsControleViabHttpGet">
+      <http:address location="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsControleViabHttpPost" binding="tns:WsControleViabHttpPost">
+      <http:address location="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

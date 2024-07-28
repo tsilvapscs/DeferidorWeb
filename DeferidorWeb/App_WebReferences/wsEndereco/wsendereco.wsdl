@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EnumerateCounties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pMunicipio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateCountiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnumerateCountiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateStreetNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="districtID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateStreetNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnumerateStreetNamesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizaTipoLogradouro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="districtID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizaTipoLogradouroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LocalizaTipoLogradouroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AchaUF_Municipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wAux" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AchaUF_MunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AchaUF_MunicipioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregaUF">
+        <s:complexType />
+      </s:element>
+      <s:element name="CarregaUFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregaUFResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolveCodigoTipoLogradouro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wTipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolveCodigoTipoLogradouroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolveCodigoTipoLogradouroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizaLogradouro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="districtID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizaLogradouroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LocalizaLogradouroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateDistricts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateDistrictsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnumerateDistrictsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateStreetTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="districtID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateStreetTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnumerateStreetTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnumerateUf">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnumerateUfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnumerateUfResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaDescricaoMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pMunicipio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaDescricaoMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaDescricaoMunicipioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaCodigoBairro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wBairro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wCodMunicipio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaCodigoBairroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaCodigoBairroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnderecoQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_tLG_CEP8" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnderecoQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnderecoQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizaCep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wCodLogradouro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizaCepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LocalizaCepResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaCodigoTipoLogradouro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wTipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornaCodigoTipoLogradouroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornaCodigoTipoLogradouroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EnumerateCountiesSoapIn">
+    <wsdl:part name="parameters" element="tns:EnumerateCounties" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateCountiesSoapOut">
+    <wsdl:part name="parameters" element="tns:EnumerateCountiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:EnumerateStreetNames" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:EnumerateStreetNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaTipoLogradouroSoapIn">
+    <wsdl:part name="parameters" element="tns:LocalizaTipoLogradouro" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaTipoLogradouroSoapOut">
+    <wsdl:part name="parameters" element="tns:LocalizaTipoLogradouroResponse" />
+  </wsdl:message>
+  <wsdl:message name="AchaUF_MunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:AchaUF_Municipio" />
+  </wsdl:message>
+  <wsdl:message name="AchaUF_MunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:AchaUF_MunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregaUFSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregaUF" />
+  </wsdl:message>
+  <wsdl:message name="CarregaUFSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregaUFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolveCodigoTipoLogradouroSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolveCodigoTipoLogradouro" />
+  </wsdl:message>
+  <wsdl:message name="DevolveCodigoTipoLogradouroSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolveCodigoTipoLogradouroResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaLogradouroSoapIn">
+    <wsdl:part name="parameters" element="tns:LocalizaLogradouro" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaLogradouroSoapOut">
+    <wsdl:part name="parameters" element="tns:LocalizaLogradouroResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateDistrictsSoapIn">
+    <wsdl:part name="parameters" element="tns:EnumerateDistricts" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateDistrictsSoapOut">
+    <wsdl:part name="parameters" element="tns:EnumerateDistrictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:EnumerateStreetTypes" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:EnumerateStreetTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateUfSoapIn">
+    <wsdl:part name="parameters" element="tns:EnumerateUf" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateUfSoapOut">
+    <wsdl:part name="parameters" element="tns:EnumerateUfResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDescricaoMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaDescricaoMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDescricaoMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaDescricaoMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoBairroSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaCodigoBairro" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoBairroSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaCodigoBairroResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnderecoQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:EnderecoQuery" />
+  </wsdl:message>
+  <wsdl:message name="EnderecoQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:EnderecoQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaCepSoapIn">
+    <wsdl:part name="parameters" element="tns:LocalizaCep" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaCepSoapOut">
+    <wsdl:part name="parameters" element="tns:LocalizaCepResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoTipoLogradouroSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornaCodigoTipoLogradouro" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoTipoLogradouroSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornaCodigoTipoLogradouroResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateCountiesHttpGetIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="pMunicipio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateCountiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetNamesHttpGetIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="cityID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="streetType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaTipoLogradouroHttpGetIn">
+    <wsdl:part name="CountyID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="stateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaTipoLogradouroHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AchaUF_MunicipioHttpGetIn">
+    <wsdl:part name="wAux" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AchaUF_MunicipioHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CarregaUFHttpGetIn" />
+  <wsdl:message name="CarregaUFHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DevolveCodigoTipoLogradouroHttpGetIn">
+    <wsdl:part name="wTipo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevolveCodigoTipoLogradouroHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaLogradouroHttpGetIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="cityID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="streetType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaLogradouroHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateDistrictsHttpGetIn">
+    <wsdl:part name="CountyId" type="s:string" />
+    <wsdl:part name="stateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateDistrictsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetTypesHttpGetIn">
+    <wsdl:part name="CountyID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="stateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateUfHttpGetIn" />
+  <wsdl:message name="EnumerateUfHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDescricaoMunicipioHttpGetIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="pMunicipio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDescricaoMunicipioHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoBairroHttpGetIn">
+    <wsdl:part name="wBairro" type="s:string" />
+    <wsdl:part name="wCodMunicipio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoBairroHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EnderecoQueryHttpGetIn">
+    <wsdl:part name="_tLG_CEP8" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnderecoQueryHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaCepHttpGetIn">
+    <wsdl:part name="wCodLogradouro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaCepHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoTipoLogradouroHttpGetIn">
+    <wsdl:part name="wTipo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoTipoLogradouroHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateCountiesHttpPostIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="pMunicipio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateCountiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetNamesHttpPostIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="cityID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="streetType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaTipoLogradouroHttpPostIn">
+    <wsdl:part name="CountyID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="stateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaTipoLogradouroHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AchaUF_MunicipioHttpPostIn">
+    <wsdl:part name="wAux" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AchaUF_MunicipioHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CarregaUFHttpPostIn" />
+  <wsdl:message name="CarregaUFHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DevolveCodigoTipoLogradouroHttpPostIn">
+    <wsdl:part name="wTipo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevolveCodigoTipoLogradouroHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaLogradouroHttpPostIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="cityID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="streetType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaLogradouroHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateDistrictsHttpPostIn">
+    <wsdl:part name="CountyId" type="s:string" />
+    <wsdl:part name="stateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateDistrictsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetTypesHttpPostIn">
+    <wsdl:part name="CountyID" type="s:string" />
+    <wsdl:part name="districtID" type="s:string" />
+    <wsdl:part name="stateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateStreetTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EnumerateUfHttpPostIn" />
+  <wsdl:message name="EnumerateUfHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDescricaoMunicipioHttpPostIn">
+    <wsdl:part name="stateID" type="s:string" />
+    <wsdl:part name="pMunicipio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDescricaoMunicipioHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoBairroHttpPostIn">
+    <wsdl:part name="wBairro" type="s:string" />
+    <wsdl:part name="wCodMunicipio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoBairroHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EnderecoQueryHttpPostIn">
+    <wsdl:part name="_tLG_CEP8" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnderecoQueryHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaCepHttpPostIn">
+    <wsdl:part name="wCodLogradouro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LocalizaCepHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoTipoLogradouroHttpPostIn">
+    <wsdl:part name="wTipo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornaCodigoTipoLogradouroHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WSEnderecoSoap">
+    <wsdl:operation name="EnumerateCounties">
+      <wsdl:input message="tns:EnumerateCountiesSoapIn" />
+      <wsdl:output message="tns:EnumerateCountiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <wsdl:input message="tns:EnumerateStreetNamesSoapIn" />
+      <wsdl:output message="tns:EnumerateStreetNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <wsdl:input message="tns:LocalizaTipoLogradouroSoapIn" />
+      <wsdl:output message="tns:LocalizaTipoLogradouroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <wsdl:input message="tns:AchaUF_MunicipioSoapIn" />
+      <wsdl:output message="tns:AchaUF_MunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <wsdl:input message="tns:CarregaUFSoapIn" />
+      <wsdl:output message="tns:CarregaUFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <wsdl:input message="tns:DevolveCodigoTipoLogradouroSoapIn" />
+      <wsdl:output message="tns:DevolveCodigoTipoLogradouroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <wsdl:input message="tns:LocalizaLogradouroSoapIn" />
+      <wsdl:output message="tns:LocalizaLogradouroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <wsdl:input message="tns:EnumerateDistrictsSoapIn" />
+      <wsdl:output message="tns:EnumerateDistrictsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <wsdl:input message="tns:EnumerateStreetTypesSoapIn" />
+      <wsdl:output message="tns:EnumerateStreetTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <wsdl:input message="tns:EnumerateUfSoapIn" />
+      <wsdl:output message="tns:EnumerateUfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <wsdl:input message="tns:BuscaDescricaoMunicipioSoapIn" />
+      <wsdl:output message="tns:BuscaDescricaoMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <wsdl:input message="tns:RetornaCodigoBairroSoapIn" />
+      <wsdl:output message="tns:RetornaCodigoBairroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <wsdl:input message="tns:EnderecoQuerySoapIn" />
+      <wsdl:output message="tns:EnderecoQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <wsdl:input message="tns:LocalizaCepSoapIn" />
+      <wsdl:output message="tns:LocalizaCepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <wsdl:input message="tns:RetornaCodigoTipoLogradouroSoapIn" />
+      <wsdl:output message="tns:RetornaCodigoTipoLogradouroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSEnderecoHttpGet">
+    <wsdl:operation name="EnumerateCounties">
+      <wsdl:input message="tns:EnumerateCountiesHttpGetIn" />
+      <wsdl:output message="tns:EnumerateCountiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <wsdl:input message="tns:EnumerateStreetNamesHttpGetIn" />
+      <wsdl:output message="tns:EnumerateStreetNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <wsdl:input message="tns:LocalizaTipoLogradouroHttpGetIn" />
+      <wsdl:output message="tns:LocalizaTipoLogradouroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <wsdl:input message="tns:AchaUF_MunicipioHttpGetIn" />
+      <wsdl:output message="tns:AchaUF_MunicipioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <wsdl:input message="tns:CarregaUFHttpGetIn" />
+      <wsdl:output message="tns:CarregaUFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <wsdl:input message="tns:DevolveCodigoTipoLogradouroHttpGetIn" />
+      <wsdl:output message="tns:DevolveCodigoTipoLogradouroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <wsdl:input message="tns:LocalizaLogradouroHttpGetIn" />
+      <wsdl:output message="tns:LocalizaLogradouroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <wsdl:input message="tns:EnumerateDistrictsHttpGetIn" />
+      <wsdl:output message="tns:EnumerateDistrictsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <wsdl:input message="tns:EnumerateStreetTypesHttpGetIn" />
+      <wsdl:output message="tns:EnumerateStreetTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <wsdl:input message="tns:EnumerateUfHttpGetIn" />
+      <wsdl:output message="tns:EnumerateUfHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <wsdl:input message="tns:BuscaDescricaoMunicipioHttpGetIn" />
+      <wsdl:output message="tns:BuscaDescricaoMunicipioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <wsdl:input message="tns:RetornaCodigoBairroHttpGetIn" />
+      <wsdl:output message="tns:RetornaCodigoBairroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <wsdl:input message="tns:EnderecoQueryHttpGetIn" />
+      <wsdl:output message="tns:EnderecoQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <wsdl:input message="tns:LocalizaCepHttpGetIn" />
+      <wsdl:output message="tns:LocalizaCepHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <wsdl:input message="tns:RetornaCodigoTipoLogradouroHttpGetIn" />
+      <wsdl:output message="tns:RetornaCodigoTipoLogradouroHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSEnderecoHttpPost">
+    <wsdl:operation name="EnumerateCounties">
+      <wsdl:input message="tns:EnumerateCountiesHttpPostIn" />
+      <wsdl:output message="tns:EnumerateCountiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <wsdl:input message="tns:EnumerateStreetNamesHttpPostIn" />
+      <wsdl:output message="tns:EnumerateStreetNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <wsdl:input message="tns:LocalizaTipoLogradouroHttpPostIn" />
+      <wsdl:output message="tns:LocalizaTipoLogradouroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <wsdl:input message="tns:AchaUF_MunicipioHttpPostIn" />
+      <wsdl:output message="tns:AchaUF_MunicipioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <wsdl:input message="tns:CarregaUFHttpPostIn" />
+      <wsdl:output message="tns:CarregaUFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <wsdl:input message="tns:DevolveCodigoTipoLogradouroHttpPostIn" />
+      <wsdl:output message="tns:DevolveCodigoTipoLogradouroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <wsdl:input message="tns:LocalizaLogradouroHttpPostIn" />
+      <wsdl:output message="tns:LocalizaLogradouroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <wsdl:input message="tns:EnumerateDistrictsHttpPostIn" />
+      <wsdl:output message="tns:EnumerateDistrictsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <wsdl:input message="tns:EnumerateStreetTypesHttpPostIn" />
+      <wsdl:output message="tns:EnumerateStreetTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <wsdl:input message="tns:EnumerateUfHttpPostIn" />
+      <wsdl:output message="tns:EnumerateUfHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <wsdl:input message="tns:BuscaDescricaoMunicipioHttpPostIn" />
+      <wsdl:output message="tns:BuscaDescricaoMunicipioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <wsdl:input message="tns:RetornaCodigoBairroHttpPostIn" />
+      <wsdl:output message="tns:RetornaCodigoBairroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <wsdl:input message="tns:EnderecoQueryHttpPostIn" />
+      <wsdl:output message="tns:EnderecoQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <wsdl:input message="tns:LocalizaCepHttpPostIn" />
+      <wsdl:output message="tns:LocalizaCepHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <wsdl:input message="tns:RetornaCodigoTipoLogradouroHttpPostIn" />
+      <wsdl:output message="tns:RetornaCodigoTipoLogradouroHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSEnderecoSoap" type="tns:WSEnderecoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnumerateCounties">
+      <soap:operation soapAction="http://tempuri.org/EnumerateCounties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <soap:operation soapAction="http://tempuri.org/EnumerateStreetNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <soap:operation soapAction="http://tempuri.org/LocalizaTipoLogradouro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <soap:operation soapAction="http://tempuri.org/AchaUF_Municipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <soap:operation soapAction="http://tempuri.org/CarregaUF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <soap:operation soapAction="http://tempuri.org/DevolveCodigoTipoLogradouro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <soap:operation soapAction="http://tempuri.org/LocalizaLogradouro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <soap:operation soapAction="http://tempuri.org/EnumerateDistricts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <soap:operation soapAction="http://tempuri.org/EnumerateStreetTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <soap:operation soapAction="http://tempuri.org/EnumerateUf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <soap:operation soapAction="http://tempuri.org/BuscaDescricaoMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <soap:operation soapAction="http://tempuri.org/RetornaCodigoBairro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <soap:operation soapAction="http://tempuri.org/EnderecoQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <soap:operation soapAction="http://tempuri.org/LocalizaCep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <soap:operation soapAction="http://tempuri.org/RetornaCodigoTipoLogradouro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSEnderecoSoap12" type="tns:WSEnderecoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnumerateCounties">
+      <soap12:operation soapAction="http://tempuri.org/EnumerateCounties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <soap12:operation soapAction="http://tempuri.org/EnumerateStreetNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <soap12:operation soapAction="http://tempuri.org/LocalizaTipoLogradouro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <soap12:operation soapAction="http://tempuri.org/AchaUF_Municipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <soap12:operation soapAction="http://tempuri.org/CarregaUF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <soap12:operation soapAction="http://tempuri.org/DevolveCodigoTipoLogradouro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <soap12:operation soapAction="http://tempuri.org/LocalizaLogradouro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <soap12:operation soapAction="http://tempuri.org/EnumerateDistricts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <soap12:operation soapAction="http://tempuri.org/EnumerateStreetTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <soap12:operation soapAction="http://tempuri.org/EnumerateUf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/BuscaDescricaoMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <soap12:operation soapAction="http://tempuri.org/RetornaCodigoBairro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <soap12:operation soapAction="http://tempuri.org/EnderecoQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <soap12:operation soapAction="http://tempuri.org/LocalizaCep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <soap12:operation soapAction="http://tempuri.org/RetornaCodigoTipoLogradouro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSEnderecoHttpGet" type="tns:WSEnderecoHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="EnumerateCounties">
+      <http:operation location="/EnumerateCounties" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <http:operation location="/EnumerateStreetNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <http:operation location="/LocalizaTipoLogradouro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <http:operation location="/AchaUF_Municipio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <http:operation location="/CarregaUF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <http:operation location="/DevolveCodigoTipoLogradouro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <http:operation location="/LocalizaLogradouro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <http:operation location="/EnumerateDistricts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <http:operation location="/EnumerateStreetTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <http:operation location="/EnumerateUf" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <http:operation location="/BuscaDescricaoMunicipio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <http:operation location="/RetornaCodigoBairro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <http:operation location="/EnderecoQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <http:operation location="/LocalizaCep" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <http:operation location="/RetornaCodigoTipoLogradouro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSEnderecoHttpPost" type="tns:WSEnderecoHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="EnumerateCounties">
+      <http:operation location="/EnumerateCounties" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetNames">
+      <http:operation location="/EnumerateStreetNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaTipoLogradouro">
+      <http:operation location="/LocalizaTipoLogradouro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchaUF_Municipio">
+      <http:operation location="/AchaUF_Municipio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregaUF">
+      <http:operation location="/CarregaUF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolveCodigoTipoLogradouro">
+      <http:operation location="/DevolveCodigoTipoLogradouro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaLogradouro">
+      <http:operation location="/LocalizaLogradouro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateDistricts">
+      <http:operation location="/EnumerateDistricts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateStreetTypes">
+      <http:operation location="/EnumerateStreetTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnumerateUf">
+      <http:operation location="/EnumerateUf" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDescricaoMunicipio">
+      <http:operation location="/BuscaDescricaoMunicipio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoBairro">
+      <http:operation location="/RetornaCodigoBairro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnderecoQuery">
+      <http:operation location="/EnderecoQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizaCep">
+      <http:operation location="/LocalizaCep" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaCodigoTipoLogradouro">
+      <http:operation location="/RetornaCodigoTipoLogradouro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSEndereco">
+    <wsdl:port name="WSEnderecoSoap" binding="tns:WSEnderecoSoap">
+      <soap:address location="http://www.jucerja.rj.gov.br/wsendereco/wsendereco.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSEnderecoSoap12" binding="tns:WSEnderecoSoap12">
+      <soap12:address location="http://www.jucerja.rj.gov.br/wsendereco/wsendereco.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSEnderecoHttpGet" binding="tns:WSEnderecoHttpGet">
+      <http:address location="http://www.jucerja.rj.gov.br/wsendereco/wsendereco.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSEnderecoHttpPost" binding="tns:WSEnderecoHttpPost">
+      <http:address location="http://www.jucerja.rj.gov.br/wsendereco/wsendereco.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

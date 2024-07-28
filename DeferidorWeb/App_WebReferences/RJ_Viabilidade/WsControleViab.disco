@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx?wsdl" docRef="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" xmlns:q1="http://www.jucerja.rj.gov.br" binding="q1:WsControleViabSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.jucerja.rj.gov.br/WsControleViab/WsControleViab.asmx" xmlns:q2="http://www.jucerja.rj.gov.br" binding="q2:WsControleViabSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

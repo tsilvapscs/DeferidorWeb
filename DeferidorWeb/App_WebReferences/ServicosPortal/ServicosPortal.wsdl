@@ -1,0 +1,1725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://servicos.integrador.serpro.gov.br/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://redesim.serpro.gov.br/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://servicos.integrador.serpro.gov.br/" />
+      <s:import namespace="http://redesim.serpro.gov.br/" />
+      <s:element name="AtualizaCadastroDBEReceita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Protocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizaCadastroDBEReceitaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getNumeroDeInscricaoSEFAZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCnpj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumeroDeInscricaoSEFAZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNumeroDeInscricaoSEFAZResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HomologacaoNireDBE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nire" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Protocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HomologacaoNireDBEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HomologacaoNireDBEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getXmlEmpresaDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nire" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getXmlEmpresaDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getXmlEmpresaDsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuantidadeAtos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nire" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuantidadeAtosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getQuantidadeAtosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValorProcessoSiarco">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Natureza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="QuantidadeVias" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValorProcessoSiarcoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getValorProcessoSiarcoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValorProcessoSiarco2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Natureza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="QuantidadeVias" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenciaUnidade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValorProcessoSiarco2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getValorProcessoSiarco2Result" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnidadeDNRC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodJunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sequencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoSessao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnidadeDNRCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnidadeDNRCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravaProtocoloConciliacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_nr_protocolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_id_doc_arrec" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_tp_processo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_dt_solicitacao" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_arquivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravaProtocoloConciliacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GravaProtocoloConciliacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravaProtocoloConciliacaoV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_nr_protocolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_nr_protocolo_porte" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_id_doc_arrec" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_tp_processo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_dt_solicitacao" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_arquivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravaProtocoloConciliacaoV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GravaProtocoloConciliacaoV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaAndamentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Protocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaAndamentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaAndamentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaAlternadaProtocolo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_nr_viabilidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_nr_alvara" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_nr_requerimento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaAlternadaProtocoloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaAlternadaProtocoloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFuncionario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCpf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFuncionarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFuncionarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUltimoAndamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUltimoAndamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUltimoAndamentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExigenciasSIARCO">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetExigenciasSIARCOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExigenciasSIARCOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExigenciasSiarco">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExigenciasSiarcoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddExigenciasSiarcoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipoLivro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDescricao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipoLivroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTipoLivroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefereProcessosLotesJuntaRFB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Protocolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPFUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoProcedimento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefereProcessosLotesJuntaRFBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DefereProcessosLotesJuntaRFBResult" type="tns:Retorno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Retorno">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Recibo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identificacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nire" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regisroDiferente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="XmlDBE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codretorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oCPFResponse" type="s1:consultaCPFResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="oWs35Response" type="s2:serviceResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="oCNPJResponse" type="s1:retornoWS11Redesim" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DefereProcessosLotesJuntaRFBV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Protocolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPFUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoProcedimento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefereProcessosLotesJuntaRFBV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DefereProcessosLotesJuntaRFBV2Result" type="tns:Retorno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefereProcessoRFB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DadosEntrada" type="tns:DadosDBERFB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DadosDBERFB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ORGAO_RESPONSAVEL_DEFERIMENTO_RFB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="filialFora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensagemIndeferimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoIndeferimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="resultadoRegistroIntegradorEstadual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numeroNire246" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDeferidor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoAtualizacao" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnpjOrgaoRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numeroServentia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nire" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioSistema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nroViabilidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nroDBE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numeroRegistroOab" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DefereProcessoRFBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DefereProcessoRFBResult" type="tns:Retorno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsultaSociosempresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNire" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsultaSociosempresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsultaSociosempresaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEmpresasdoSocio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNire" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEmpresasdoSocioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEmpresasdoSocioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProcessoDiital">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProcessoDiitalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProcessaImprimeEtiqueta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessaImprimeEtiquetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessaImprimeEtiquetaResult" type="tns:RetornoRegin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetornoRegin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Valor1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorXml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArquivoBase64" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArquivoByte" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getStatusProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatusProcessoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatusProcessoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaProtocoloRegin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCnpj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaProtocoloReginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaProtocoloReginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaProcExigenciaLivro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaProcExigenciaLivroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaProcExigenciaLivroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravaSolicitacaoDeProcessoRegin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProtocolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCnpj" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNireMatricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroInscricao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pEvento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pUf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pMunicipio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCNPJOrgaodeRegistro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravaSolicitacaoDeProcessoReginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GravaSolicitacaoDeProcessoReginResult" type="tns:RetornoRegin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTokenViabilidadeBombeiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NroToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pUFJuntaDefault" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTokenViabilidadeBombeiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTokenViabilidadeBombeiroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://servicos.integrador.serpro.gov.br/">
+      <s:complexType name="consultaCPFResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="retornoWSRedesim" type="s1:retornoWSRedesim" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="retornoWS09Redesim" type="s1:retornoWS09Redesim" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="retornoWSRedesim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="statusEnvio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codigoRetorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="descricaoRetorno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="retornoWS09Redesim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codServico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="versao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroProtocolo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroOcorrencia" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="reciboSolicitacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="identificacaoSolicitacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="dadosCPF" type="s1:dadosCPF" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dadosCPF">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numCPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataNascimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="sexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="residenteExterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="situacaoCadastral" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endereco" type="s1:endereco09" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nacionalidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeMae" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="naturalidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="anoObito" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="endereco09">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="indOrigemEndereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="uf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codMunicipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="logradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="complementoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="referencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cidadeExterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codPais" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="retornoWS11Redesim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codServico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="versao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroProtocolo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroOcorrencia" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="reciboSolicitacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="identificacaoSolicitacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="dadosCNPJ" type="s1:dadosCNPJ" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dadosCNPJ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeEmpresarial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="indMatrizFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataAberturaEstabelecimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataAberturaEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="situacaoCadastral" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endereco" type="s1:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="objetoSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="naturezaJuridica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroOrgaoRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="capitalSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfRepresentante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeRepresentante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="qualificacaoRepresentante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="porte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="opcaoSimplesNacional" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="opcaoSimei" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnaePrincipal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="cnaeSecundaria" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="tipoUnidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="formaAtuacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="cnpjFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="ufFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="numeroRegistroFilial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnpjMatriz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ufMatriz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroRegistroMatriz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="dadosSocio" nillable="true" type="s1:dadosSocio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="endereco">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="indOrigemEndereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="uf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codMunicipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="logradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="complementoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="referencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cidadeExterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codPais" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dadosSocio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfCnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="qualificacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataInclusao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="valorPartCapitalSocialString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="paisOrigem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfRepresentanteLegal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeRepresentanteLegal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="qualificacaoRepresentanteLegal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://redesim.serpro.gov.br/">
+      <s:complexType name="serviceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="return" type="s2:retornoWS" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dadosRedesim" type="s2:redesim" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="retornoWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="statusEnvio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codigoRetorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="descricaoRetorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numIdentificacaoTransmissao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="redesim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="convenio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="orgaoResponsavelDeferimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numAtoOficio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codConvenioAtoOficio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numViabilidadeAssociada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="header" type="s2:header" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fcpj" type="s2:fcpj" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="atividadeEconomica" type="s2:ativEcon" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="socios" nillable="true" type="s2:socio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="header">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="controleAtoOficio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inCpfCnpjCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfCnpjCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="subjectCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="acCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataEmissaoCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataExpiracaoCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numSerieCertificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="extensao1Certificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="extensao2Certificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="extensao3Certificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ufOrigem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codMunicOrigem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="fcpj">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="codEvento" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="dataEvento" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="tipoEvento" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inMatriz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeEmpresarial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeFantasia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codNaturezaJuridica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoOrgaoRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nire" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroRegistroCartorio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numeroDoCNPJOrgaoRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="arquivamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="capitalSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnpjEstabMatriz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codEnteFederativo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeResponsavel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfResponsavel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codQualificResponsavel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomePreposto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfPreposto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endereco" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contato" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="caixaPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cepCaixaPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codPorteEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="cnpjSucessora" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codClassificCRCcontadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ufContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numSeqContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoCRCcontadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataRegistroCRCcontadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="orgaoEmissorIdContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ufOrgaoEmissorIdContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataEmissaoIdContadorPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codClassificEmpresaContabil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="ufCRCempresaContabil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="seqCRCempresaContabil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoCRCempresaContabil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnpjEmpresaContabil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeEmpresaContabil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inPermanencialivrosFiscais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inOpcaoLivrosEletronicos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inOpcaoDocumentosEletronicos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inProcessamentoEletronicoDados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inUtilizacaoECF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codVinculoImovel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataValidadeInscricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nirf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeProprietarioRural" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inCpfCnpjProprietario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfCnpjProprietarioRural" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inscricaoEstadualAnteriorProdutorRural" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codLocalizacaoImovel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numIncraProprietario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inscricaoImobiliariaImovelRural" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="areaImovel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inAbrangenciaMunic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codMotivoSituacaoCadastral" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataDocumentoInaptidao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numDocumentoInaptidao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endResponsavel" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoResponsavel" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endPreposto" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoPreposto" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endContadorPf" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoContadorPf" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endProprietarioRuralPf" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoProprietarioRuralPf" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endEmpresaContabilComplementar" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoEmpresaContabilComplementar" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inCpfCnpjProprietarioCafir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfCnpjProprietarioCafir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codSitCadProprietarioComplementar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codMotivoSitCadProprietarioComplementar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="areaImovelComplementar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nomeImovelComplementar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endProprietarioComplementar" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoProprietarioComplementar" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="instrumentoJudicial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inOpcaoSimples" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="tipoEstatal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="inInscricaoMEI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nire246" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="motivoInexistenciaRegistro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="endereco">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="indOrigemEndereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="uf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codMunicipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="logradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="numLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="complementoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="referencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cidadeExterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codPais" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="contato">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dddTelefone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="telefone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dddTelefone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="telefone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dddFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="correioEletronico" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ativEcon">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codCnaeFiscal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="codCnaeSecundaria" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="codFormaDeAtuacao" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codTipoUnidade" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="objetoSocial" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="socio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="indTipoContribuinte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="indCnpjCpfSocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cnpjCpfSocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="socio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="percentualCapitalSocialSocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="capitalSocialSocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codQualificacaoSocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codPais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nacionalidadeSocioPf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataInclusaoIncorreta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="dataInclusaoCorreta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endSocio" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoSocio" type="s2:contato" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="representanteLegal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="codQualificacaoRepresentanteLegal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="cpfRepresentanteLegal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="endRepLegal" type="s2:endereco" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="contatoRepLegal" type="s2:contato" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AtualizaCadastroDBEReceitaSoapIn">
+    <wsdl:part name="parameters" element="tns:AtualizaCadastroDBEReceita" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaCadastroDBEReceitaSoapOut">
+    <wsdl:part name="parameters" element="tns:AtualizaCadastroDBEReceitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumeroDeInscricaoSEFAZSoapIn">
+    <wsdl:part name="parameters" element="tns:getNumeroDeInscricaoSEFAZ" />
+  </wsdl:message>
+  <wsdl:message name="getNumeroDeInscricaoSEFAZSoapOut">
+    <wsdl:part name="parameters" element="tns:getNumeroDeInscricaoSEFAZResponse" />
+  </wsdl:message>
+  <wsdl:message name="HomologacaoNireDBESoapIn">
+    <wsdl:part name="parameters" element="tns:HomologacaoNireDBE" />
+  </wsdl:message>
+  <wsdl:message name="HomologacaoNireDBESoapOut">
+    <wsdl:part name="parameters" element="tns:HomologacaoNireDBEResponse" />
+  </wsdl:message>
+  <wsdl:message name="getXmlEmpresaDsSoapIn">
+    <wsdl:part name="parameters" element="tns:getXmlEmpresaDs" />
+  </wsdl:message>
+  <wsdl:message name="getXmlEmpresaDsSoapOut">
+    <wsdl:part name="parameters" element="tns:getXmlEmpresaDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuantidadeAtosSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuantidadeAtos" />
+  </wsdl:message>
+  <wsdl:message name="getQuantidadeAtosSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuantidadeAtosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValorProcessoSiarcoSoapIn">
+    <wsdl:part name="parameters" element="tns:getValorProcessoSiarco" />
+  </wsdl:message>
+  <wsdl:message name="getValorProcessoSiarcoSoapOut">
+    <wsdl:part name="parameters" element="tns:getValorProcessoSiarcoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValorProcessoSiarco2SoapIn">
+    <wsdl:part name="parameters" element="tns:getValorProcessoSiarco2" />
+  </wsdl:message>
+  <wsdl:message name="getValorProcessoSiarco2SoapOut">
+    <wsdl:part name="parameters" element="tns:getValorProcessoSiarco2Response" />
+  </wsdl:message>
+  <wsdl:message name="getUnidadeDNRCSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnidadeDNRC" />
+  </wsdl:message>
+  <wsdl:message name="getUnidadeDNRCSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnidadeDNRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravaProtocoloConciliacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:GravaProtocoloConciliacao" />
+  </wsdl:message>
+  <wsdl:message name="GravaProtocoloConciliacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:GravaProtocoloConciliacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravaProtocoloConciliacaoV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GravaProtocoloConciliacaoV2" />
+  </wsdl:message>
+  <wsdl:message name="GravaProtocoloConciliacaoV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GravaProtocoloConciliacaoV2Response" />
+  </wsdl:message>
+  <wsdl:message name="ListaAndamentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaAndamentos" />
+  </wsdl:message>
+  <wsdl:message name="ListaAndamentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaAndamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaAlternadaProtocoloSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaAlternadaProtocolo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaAlternadaProtocoloSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaAlternadaProtocoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFuncionarioSoapIn">
+    <wsdl:part name="parameters" element="tns:getFuncionario" />
+  </wsdl:message>
+  <wsdl:message name="getFuncionarioSoapOut">
+    <wsdl:part name="parameters" element="tns:getFuncionarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUltimoAndamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUltimoAndamento" />
+  </wsdl:message>
+  <wsdl:message name="GetUltimoAndamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUltimoAndamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExigenciasSIARCOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExigenciasSIARCO" />
+  </wsdl:message>
+  <wsdl:message name="GetExigenciasSIARCOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExigenciasSIARCOResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddExigenciasSiarcoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddExigenciasSiarco" />
+  </wsdl:message>
+  <wsdl:message name="AddExigenciasSiarcoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddExigenciasSiarcoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTipoLivroSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTipoLivro" />
+  </wsdl:message>
+  <wsdl:message name="GetTipoLivroSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTipoLivroResponse" />
+  </wsdl:message>
+  <wsdl:message name="DefereProcessosLotesJuntaRFBSoapIn">
+    <wsdl:part name="parameters" element="tns:DefereProcessosLotesJuntaRFB" />
+  </wsdl:message>
+  <wsdl:message name="DefereProcessosLotesJuntaRFBSoapOut">
+    <wsdl:part name="parameters" element="tns:DefereProcessosLotesJuntaRFBResponse" />
+  </wsdl:message>
+  <wsdl:message name="DefereProcessosLotesJuntaRFBV2SoapIn">
+    <wsdl:part name="parameters" element="tns:DefereProcessosLotesJuntaRFBV2" />
+  </wsdl:message>
+  <wsdl:message name="DefereProcessosLotesJuntaRFBV2SoapOut">
+    <wsdl:part name="parameters" element="tns:DefereProcessosLotesJuntaRFBV2Response" />
+  </wsdl:message>
+  <wsdl:message name="DefereProcessoRFBSoapIn">
+    <wsdl:part name="parameters" element="tns:DefereProcessoRFB" />
+  </wsdl:message>
+  <wsdl:message name="DefereProcessoRFBSoapOut">
+    <wsdl:part name="parameters" element="tns:DefereProcessoRFBResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsultaSociosempresaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsultaSociosempresa" />
+  </wsdl:message>
+  <wsdl:message name="GetConsultaSociosempresaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsultaSociosempresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEmpresasdoSocioSoapIn">
+    <wsdl:part name="parameters" element="tns:getEmpresasdoSocio" />
+  </wsdl:message>
+  <wsdl:message name="getEmpresasdoSocioSoapOut">
+    <wsdl:part name="parameters" element="tns:getEmpresasdoSocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProcessoDiitalSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProcessoDiital" />
+  </wsdl:message>
+  <wsdl:message name="SetProcessoDiitalSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProcessoDiitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessaImprimeEtiquetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessaImprimeEtiqueta" />
+  </wsdl:message>
+  <wsdl:message name="ProcessaImprimeEtiquetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessaImprimeEtiquetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatusProcesso" />
+  </wsdl:message>
+  <wsdl:message name="getStatusProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatusProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProtocoloReginSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaProtocoloRegin" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProtocoloReginSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaProtocoloReginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaProcExigenciaLivroSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaProcExigenciaLivro" />
+  </wsdl:message>
+  <wsdl:message name="ValidaProcExigenciaLivroSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaProcExigenciaLivroResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravaSolicitacaoDeProcessoReginSoapIn">
+    <wsdl:part name="parameters" element="tns:GravaSolicitacaoDeProcessoRegin" />
+  </wsdl:message>
+  <wsdl:message name="GravaSolicitacaoDeProcessoReginSoapOut">
+    <wsdl:part name="parameters" element="tns:GravaSolicitacaoDeProcessoReginResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTokenViabilidadeBombeiroSoapIn">
+    <wsdl:part name="parameters" element="tns:getTokenViabilidadeBombeiro" />
+  </wsdl:message>
+  <wsdl:message name="getTokenViabilidadeBombeiroSoapOut">
+    <wsdl:part name="parameters" element="tns:getTokenViabilidadeBombeiroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicosPortalSoap">
+    <wsdl:operation name="AtualizaCadastroDBEReceita">
+      <wsdl:input message="tns:AtualizaCadastroDBEReceitaSoapIn" />
+      <wsdl:output message="tns:AtualizaCadastroDBEReceitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumeroDeInscricaoSEFAZ">
+      <wsdl:input message="tns:getNumeroDeInscricaoSEFAZSoapIn" />
+      <wsdl:output message="tns:getNumeroDeInscricaoSEFAZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HomologacaoNireDBE">
+      <wsdl:input message="tns:HomologacaoNireDBESoapIn" />
+      <wsdl:output message="tns:HomologacaoNireDBESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getXmlEmpresaDs">
+      <wsdl:input message="tns:getXmlEmpresaDsSoapIn" />
+      <wsdl:output message="tns:getXmlEmpresaDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuantidadeAtos">
+      <wsdl:input message="tns:getQuantidadeAtosSoapIn" />
+      <wsdl:output message="tns:getQuantidadeAtosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValorProcessoSiarco">
+      <wsdl:input message="tns:getValorProcessoSiarcoSoapIn" />
+      <wsdl:output message="tns:getValorProcessoSiarcoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValorProcessoSiarco2">
+      <wsdl:input message="tns:getValorProcessoSiarco2SoapIn" />
+      <wsdl:output message="tns:getValorProcessoSiarco2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnidadeDNRC">
+      <wsdl:input message="tns:getUnidadeDNRCSoapIn" />
+      <wsdl:output message="tns:getUnidadeDNRCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravaProtocoloConciliacao">
+      <wsdl:input message="tns:GravaProtocoloConciliacaoSoapIn" />
+      <wsdl:output message="tns:GravaProtocoloConciliacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravaProtocoloConciliacaoV2">
+      <wsdl:input message="tns:GravaProtocoloConciliacaoV2SoapIn" />
+      <wsdl:output message="tns:GravaProtocoloConciliacaoV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaAndamentos">
+      <wsdl:input message="tns:ListaAndamentosSoapIn" />
+      <wsdl:output message="tns:ListaAndamentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAlternadaProtocolo">
+      <wsdl:input message="tns:ConsultaAlternadaProtocoloSoapIn" />
+      <wsdl:output message="tns:ConsultaAlternadaProtocoloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFuncionario">
+      <wsdl:input message="tns:getFuncionarioSoapIn" />
+      <wsdl:output message="tns:getFuncionarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoAndamento">
+      <wsdl:input message="tns:GetUltimoAndamentoSoapIn" />
+      <wsdl:output message="tns:GetUltimoAndamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExigenciasSIARCO">
+      <wsdl:input message="tns:GetExigenciasSIARCOSoapIn" />
+      <wsdl:output message="tns:GetExigenciasSIARCOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExigenciasSiarco">
+      <wsdl:input message="tns:AddExigenciasSiarcoSoapIn" />
+      <wsdl:output message="tns:AddExigenciasSiarcoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoLivro">
+      <wsdl:input message="tns:GetTipoLivroSoapIn" />
+      <wsdl:output message="tns:GetTipoLivroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessosLotesJuntaRFB">
+      <wsdl:input message="tns:DefereProcessosLotesJuntaRFBSoapIn" />
+      <wsdl:output message="tns:DefereProcessosLotesJuntaRFBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessosLotesJuntaRFBV2">
+      <wsdl:input message="tns:DefereProcessosLotesJuntaRFBV2SoapIn" />
+      <wsdl:output message="tns:DefereProcessosLotesJuntaRFBV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessoRFB">
+      <wsdl:input message="tns:DefereProcessoRFBSoapIn" />
+      <wsdl:output message="tns:DefereProcessoRFBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaSociosempresa">
+      <wsdl:input message="tns:GetConsultaSociosempresaSoapIn" />
+      <wsdl:output message="tns:GetConsultaSociosempresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmpresasdoSocio">
+      <wsdl:input message="tns:getEmpresasdoSocioSoapIn" />
+      <wsdl:output message="tns:getEmpresasdoSocioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProcessoDiital">
+      <wsdl:input message="tns:SetProcessoDiitalSoapIn" />
+      <wsdl:output message="tns:SetProcessoDiitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessaImprimeEtiqueta">
+      <wsdl:input message="tns:ProcessaImprimeEtiquetaSoapIn" />
+      <wsdl:output message="tns:ProcessaImprimeEtiquetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusProcesso">
+      <wsdl:input message="tns:getStatusProcessoSoapIn" />
+      <wsdl:output message="tns:getStatusProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProtocoloRegin">
+      <wsdl:input message="tns:ConsultaProtocoloReginSoapIn" />
+      <wsdl:output message="tns:ConsultaProtocoloReginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaProcExigenciaLivro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tipo de retorno (StatusProceso)&lt;/br&gt;
+                                  1 - nao tem processo ainda&lt;/br&gt;
+                                  2 - Exigencia cobra de novo, nao encontrou o pagamento&lt;/br&gt;
+                                  3 - Exigencia normal&lt;/br&gt;
+                                  7 - Pagamento efetuado nao suficiente para o valor do processo&lt;/br&gt;
+                                  8 - Exigencia mais de 30 dias, mas foi detectado o pagamento&lt;/br&gt;
+                                  9 - nao esta com o cliente (ou seja nao pode receber o processo)&lt;/br&gt;
+                                  10 - Pagamento efetuado e processo não protocolado&lt;/br&gt;
+                                  11 - Pagamento efetuado e processo protocolado</wsdl:documentation>
+      <wsdl:input message="tns:ValidaProcExigenciaLivroSoapIn" />
+      <wsdl:output message="tns:ValidaProcExigenciaLivroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravaSolicitacaoDeProcessoRegin">
+      <wsdl:input message="tns:GravaSolicitacaoDeProcessoReginSoapIn" />
+      <wsdl:output message="tns:GravaSolicitacaoDeProcessoReginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTokenViabilidadeBombeiro">
+      <wsdl:input message="tns:getTokenViabilidadeBombeiroSoapIn" />
+      <wsdl:output message="tns:getTokenViabilidadeBombeiroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicosPortalSoap" type="tns:ServicosPortalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AtualizaCadastroDBEReceita">
+      <soap:operation soapAction="http://tempuri.org/AtualizaCadastroDBEReceita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumeroDeInscricaoSEFAZ">
+      <soap:operation soapAction="http://tempuri.org/getNumeroDeInscricaoSEFAZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HomologacaoNireDBE">
+      <soap:operation soapAction="http://tempuri.org/HomologacaoNireDBE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXmlEmpresaDs">
+      <soap:operation soapAction="http://tempuri.org/getXmlEmpresaDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuantidadeAtos">
+      <soap:operation soapAction="http://tempuri.org/getQuantidadeAtos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValorProcessoSiarco">
+      <soap:operation soapAction="http://tempuri.org/getValorProcessoSiarco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValorProcessoSiarco2">
+      <soap:operation soapAction="http://tempuri.org/getValorProcessoSiarco2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnidadeDNRC">
+      <soap:operation soapAction="http://tempuri.org/getUnidadeDNRC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravaProtocoloConciliacao">
+      <soap:operation soapAction="http://tempuri.org/GravaProtocoloConciliacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravaProtocoloConciliacaoV2">
+      <soap:operation soapAction="http://tempuri.org/GravaProtocoloConciliacaoV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaAndamentos">
+      <soap:operation soapAction="http://tempuri.org/ListaAndamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAlternadaProtocolo">
+      <soap:operation soapAction="http://tempuri.org/ConsultaAlternadaProtocolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFuncionario">
+      <soap:operation soapAction="http://tempuri.org/getFuncionario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoAndamento">
+      <soap:operation soapAction="http://tempuri.org/GetUltimoAndamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExigenciasSIARCO">
+      <soap:operation soapAction="http://tempuri.org/GetExigenciasSIARCO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExigenciasSiarco">
+      <soap:operation soapAction="http://tempuri.org/AddExigenciasSiarco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoLivro">
+      <soap:operation soapAction="http://tempuri.org/GetTipoLivro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessosLotesJuntaRFB">
+      <soap:operation soapAction="http://tempuri.org/DefereProcessosLotesJuntaRFB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessosLotesJuntaRFBV2">
+      <soap:operation soapAction="http://tempuri.org/DefereProcessosLotesJuntaRFBV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessoRFB">
+      <soap:operation soapAction="http://tempuri.org/DefereProcessoRFB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaSociosempresa">
+      <soap:operation soapAction="http://tempuri.org/GetConsultaSociosempresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpresasdoSocio">
+      <soap:operation soapAction="http://tempuri.org/getEmpresasdoSocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProcessoDiital">
+      <soap:operation soapAction="http://tempuri.org/SetProcessoDiital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessaImprimeEtiqueta">
+      <soap:operation soapAction="http://tempuri.org/ProcessaImprimeEtiqueta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusProcesso">
+      <soap:operation soapAction="http://tempuri.org/getStatusProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProtocoloRegin">
+      <soap:operation soapAction="http://tempuri.org/ConsultaProtocoloRegin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaProcExigenciaLivro">
+      <soap:operation soapAction="http://tempuri.org/ValidaProcExigenciaLivro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravaSolicitacaoDeProcessoRegin">
+      <soap:operation soapAction="http://tempuri.org/GravaSolicitacaoDeProcessoRegin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenViabilidadeBombeiro">
+      <soap:operation soapAction="http://tempuri.org/getTokenViabilidadeBombeiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicosPortalSoap12" type="tns:ServicosPortalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AtualizaCadastroDBEReceita">
+      <soap12:operation soapAction="http://tempuri.org/AtualizaCadastroDBEReceita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumeroDeInscricaoSEFAZ">
+      <soap12:operation soapAction="http://tempuri.org/getNumeroDeInscricaoSEFAZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HomologacaoNireDBE">
+      <soap12:operation soapAction="http://tempuri.org/HomologacaoNireDBE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXmlEmpresaDs">
+      <soap12:operation soapAction="http://tempuri.org/getXmlEmpresaDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuantidadeAtos">
+      <soap12:operation soapAction="http://tempuri.org/getQuantidadeAtos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValorProcessoSiarco">
+      <soap12:operation soapAction="http://tempuri.org/getValorProcessoSiarco" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValorProcessoSiarco2">
+      <soap12:operation soapAction="http://tempuri.org/getValorProcessoSiarco2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnidadeDNRC">
+      <soap12:operation soapAction="http://tempuri.org/getUnidadeDNRC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravaProtocoloConciliacao">
+      <soap12:operation soapAction="http://tempuri.org/GravaProtocoloConciliacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravaProtocoloConciliacaoV2">
+      <soap12:operation soapAction="http://tempuri.org/GravaProtocoloConciliacaoV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaAndamentos">
+      <soap12:operation soapAction="http://tempuri.org/ListaAndamentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAlternadaProtocolo">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaAlternadaProtocolo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFuncionario">
+      <soap12:operation soapAction="http://tempuri.org/getFuncionario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoAndamento">
+      <soap12:operation soapAction="http://tempuri.org/GetUltimoAndamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExigenciasSIARCO">
+      <soap12:operation soapAction="http://tempuri.org/GetExigenciasSIARCO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExigenciasSiarco">
+      <soap12:operation soapAction="http://tempuri.org/AddExigenciasSiarco" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoLivro">
+      <soap12:operation soapAction="http://tempuri.org/GetTipoLivro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessosLotesJuntaRFB">
+      <soap12:operation soapAction="http://tempuri.org/DefereProcessosLotesJuntaRFB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessosLotesJuntaRFBV2">
+      <soap12:operation soapAction="http://tempuri.org/DefereProcessosLotesJuntaRFBV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefereProcessoRFB">
+      <soap12:operation soapAction="http://tempuri.org/DefereProcessoRFB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaSociosempresa">
+      <soap12:operation soapAction="http://tempuri.org/GetConsultaSociosempresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpresasdoSocio">
+      <soap12:operation soapAction="http://tempuri.org/getEmpresasdoSocio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProcessoDiital">
+      <soap12:operation soapAction="http://tempuri.org/SetProcessoDiital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessaImprimeEtiqueta">
+      <soap12:operation soapAction="http://tempuri.org/ProcessaImprimeEtiqueta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusProcesso">
+      <soap12:operation soapAction="http://tempuri.org/getStatusProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProtocoloRegin">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaProtocoloRegin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaProcExigenciaLivro">
+      <soap12:operation soapAction="http://tempuri.org/ValidaProcExigenciaLivro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravaSolicitacaoDeProcessoRegin">
+      <soap12:operation soapAction="http://tempuri.org/GravaSolicitacaoDeProcessoRegin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenViabilidadeBombeiro">
+      <soap12:operation soapAction="http://tempuri.org/getTokenViabilidadeBombeiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicosPortal">
+    <wsdl:port name="ServicosPortalSoap" binding="tns:ServicosPortalSoap">
+      <soap:address location="http://redesim.jucepe.pe.gov.br/regin.pe/ServicosPortal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicosPortalSoap12" binding="tns:ServicosPortalSoap12">
+      <soap12:address location="http://redesim.jucepe.pe.gov.br/regin.pe/ServicosPortal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

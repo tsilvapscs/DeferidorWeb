@@ -1,0 +1,163 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA55D9EC-0B71-4D1E-BEA0-171501D39B0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCPJ.DAL</RootNamespace>
+    <AssemblyName>RCPJ.DAL</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\TaxAssembliesProjetos\TaxAssembliesRequerimento_v13\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="psc.ApplicationBlocks.DAL, Version=1.0.4815.28602, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TaxAssembliesProjetos\TaxAssembliesES 2005\psc.ApplicationBlocks.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="psc.Framework, Version=1.0.5459.23223, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TaxAssembliesProjetos\TaxAssembliesES 2005\psc.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection\ConnectionProviderORACLE.cs" />
+    <Compile Include="Connection\ConnectionProviderSQL.cs" />
+    <Compile Include="Connection\DBInteractionBaseORACLE.cs" />
+    <Compile Include="Connection\DBInteractionBaseSQL.cs" />
+    <Compile Include="dHelperActEconOracle.cs" />
+    <Compile Include="dHelperORACLE.cs" />
+    <Compile Include="dHelperSQL.cs" />
+    <Compile Include="dR006_Natureza_Juridica_Tipo.cs" />
+    <Compile Include="dR015_Evento_Filial.cs" />
+    <Compile Include="Entities\Contrato\dCnt_prot_documentos.cs" />
+    <Compile Include="Entities\Contrato\dCnt_Clausulas_Adicionais.cs" />
+    <Compile Include="Entities\Contrato\dCnt_Protocolo_Filial.cs" />
+    <Compile Include="Entities\Contrato\dCnt_Protocolo_Viab.cs" />
+    <Compile Include="Entities\Contrato\dCnt_Prot_Cnae.cs" />
+    <Compile Include="Entities\Contrato\dCnt_Prot_Socios.cs" />
+    <Compile Include="Entities\Contrato\dCnt_prot_socios_empresa.cs" />
+    <Compile Include="Entities\Contrato\dCnt_prot_testemunha.cs" />
+    <Compile Include="Entities\Contrato\dCnt_Repr_Socio_Menor.cs" />
+    <Compile Include="Entities\dContratoClausula.cs" />
+    <Compile Include="Entities\dContratoPadrao.cs" />
+    <Compile Include="Entities\dContratoParagrafo.cs" />
+    <Compile Include="Entities\dContratoPergunta.cs" />
+    <Compile Include="Entities\dParecer.cs" />
+    <Compile Include="Entities\dA022_Tipo_Atividade.cs" />
+    <Compile Include="Entities\dCondicao.cs" />
+    <Compile Include="Entities\dContador.cs" />
+    <Compile Include="Entities\dCorrelativo.cs" />
+    <Compile Include="Entities\dInscricaoEstadual.cs" />
+    <Compile Include="Entities\dProcessoAnalista.cs" />
+    <Compile Include="Entities\dR008_Ato_Evento.cs" />
+    <Compile Include="Entities\dr013_Requerimento_Evento.cs" />
+    <Compile Include="Entities\dT010_Contratos_docs.cs" />
+    <Compile Include="Entities\dT011_Protocolo_Status.cs" />
+    <Compile Include="Entities\dT014_EIRELI_Salario_Base.cs" />
+    <Compile Include="Entities\dT017_Protocolo_Confirmacao.cs" />
+    <Compile Include="Entities\dt018_alerta_requerimento.cs" />
+    <Compile Include="Entities\dt093_Contador.cs" />
+    <Compile Include="Entities\dt094_div_dbe.cs" />
+    <Compile Include="Entities\dt095_uso_firma.cs" />
+    <Compile Include="Entities\dT098_Transf_Quotas.cs" />
+    <Compile Include="Entities\dT099_req_gen_protocolo.cs" />
+    <Compile Include="Entities\dT101_Ato_Junta.cs" />
+    <Compile Include="Entities\dTab_Logradouro.cs" />
+    <Compile Include="Entities\dVeiculos.cs" />
+    <Compile Include="Entities\RUC_ACTV_ECON.cs" />
+    <Compile Include="Entities\VIA_PROT_CNAE.cs" />
+    <Compile Include="Connection\ConnectionProvider.cs" />
+    <Compile Include="Connection\DBInteractionBase.cs" />
+    <Compile Include="dHelperActEcon.cs" />
+    <Compile Include="Entities\dA001_Atividade.cs" />
+    <Compile Include="Entities\dCNAE.cs" />
+    <Compile Include="dHelperQuery.cs" />
+    <Compile Include="Entities\dA002_Ato.cs" />
+    <Compile Include="Entities\dA003_Evento.cs" />
+    <Compile Include="Entities\dR001_Vinculo.cs" />
+    <Compile Include="Entities\dR004_Atuacao.cs" />
+    <Compile Include="Entities\dR005_Protocolo_Evento.cs" />
+    <Compile Include="Entities\dT001_Pessoa.cs" />
+    <Compile Include="Entities\dT002_Pessoa_Fisica.cs" />
+    <Compile Include="Entities\dT003_Pessoa_Juridica.cs" />
+    <Compile Include="Entities\dT004_Orgao_Registro.cs" />
+    <Compile Include="Entities\dT006_Protocolo_Requerimento.cs" />
+    <Compile Include="Entities\dTab_Actv_Desc.cs" />
+    <Compile Include="Entities\dTab_Actv_Econ.cs" />
+    <Compile Include="Entities\dTab_Cep_Tipo.cs" />
+    <Compile Include="Entities\dTab_Cep_Uf.cs" />
+    <Compile Include="Entities\dTab_Munic.cs" />
+    <Compile Include="Entities\PSC_ERRORLOG_SISTEMA.cs" />
+    <Compile Include="Entities\dT005_Protocolo.cs" />
+    <Compile Include="Entities\PSC_USUARIO_APLICACION.cs" />
+    <Compile Include="Entities\dR002_Vinculo_Endereco.cs" />
+    <Compile Include="Entities\dR003_Rel_Org_Munic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\TAB_GENERICA.cs" />
+    <Compile Include="Ruc\MAC_LOG_CARGA_JUNTA_HOMOLOG.cs" />
+    <Compile Include="Ruc\PSC_PROTOCOLO.cs" />
+    <Compile Include="Ruc\Psc_Prot_Evento_Rfb.cs" />
+    <Compile Include="Ruc\Ruc_Actv_Econ.cs" />
+    <Compile Include="Ruc\Ruc_actv_outro_estab.cs" />
+    <Compile Include="Ruc\Ruc_Cbo_Econ.cs" />
+    <Compile Include="Ruc\Ruc_Comp.cs" />
+    <Compile Include="Ruc\Ruc_Estab.cs" />
+    <Compile Include="Ruc\Ruc_General.cs" />
+    <Compile Include="Ruc\Ruc_Gen_Protocolo.cs" />
+    <Compile Include="Ruc\Ruc_Outro_Estab.cs" />
+    <Compile Include="Ruc\Ruc_Prof.cs" />
+    <Compile Include="Ruc\Ruc_Relat_Prof.cs" />
+    <Compile Include="Ruc\Tab_Inform_Extra_juntacs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
